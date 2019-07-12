@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const handleBack = props => {
-  props.history.push('/users');
+  props.history.push('/list');
 };
 
 const Userdetails = props => {

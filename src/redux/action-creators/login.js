@@ -1,6 +1,7 @@
 import { users } from '../../config/fakedb';
 
 const loginStart = () => {
+  console.log('login start!');
   return {
     type: 'LOGIN_START',
     payload: {}
@@ -8,6 +9,7 @@ const loginStart = () => {
 };
 
 const loginSuccess = (status, username) => {
+  console.log('login success!');
   return {
     type: 'LOGIN_SUCCESS',
     payload: { status: status, username: username }
@@ -15,6 +17,7 @@ const loginSuccess = (status, username) => {
 };
 
 const loginError = err => {
+  console.log('login error!');
   return {
     type: 'LOGIN_ERROR',
     payload: { error: err }
@@ -23,8 +26,9 @@ const loginError = err => {
 
 export const login = (username, password) => dispatch => {
   dispatch(loginStart());
+  console.log('login start!');
   const rs = users.filter(user => {
-    user.username === username && user.password === password;
+    return user.username === username && user.password === password;
   });
   if (rs.length > 0) {
     if (rs[0].status === 'admin') {

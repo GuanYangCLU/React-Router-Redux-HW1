@@ -18,3 +18,5 @@ const login = (state = initState, action) => {
       return state;
   }
 };
+
+export default login;

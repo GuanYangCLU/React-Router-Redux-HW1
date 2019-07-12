@@ -7,10 +7,10 @@ const Home = props => {
       <div className='nav'>
         <ul>
           <li>
-            <Link to='/users'>users</Link>
+            <Link to='/list'>Admin</Link>
           </li>
           <li>
-            <Link to='/users/:login'>users' login</Link>
+            <Link to='/login'>Please login</Link>
           </li>
         </ul>
       </div>

@@ -34,7 +34,7 @@ const Users = props => {
               {user.id}
               <Link
                 to={{
-                  pathname: `/users/${user.login}`,
+                  pathname: `/list/${user.login}`,
                   state: {
                     login: user.login
                   }
