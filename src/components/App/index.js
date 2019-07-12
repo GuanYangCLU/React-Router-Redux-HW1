@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, withRouter } from 'react-router-dom';
-import Home from './component/home';
-import Users from './component/users';
-import Userdetails from './component/userdetails';
-// import Userdetails from './component/userdetails';
-
+import Home from '../home';
+import Users from '../users';
+import Userdetails from '../userdetails';
+// import Userdetails from './components/userdetails';
+// @@ link内传参：<Link to={{pathname: '',state: {}}} /> @@@@@@
 // const WithRouterUserDetails = withRouter(Userdetails);
 
 function App() {
