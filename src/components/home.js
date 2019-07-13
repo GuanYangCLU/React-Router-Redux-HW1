@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Home = props => {
+// 这部分的auth不完善
+const Home = ({ isAuthenticated, status, username }) => {
   return (
     <div>
       <div className='nav'>
@@ -10,7 +11,20 @@ const Home = props => {
             <Link to='/list'>Admin</Link>
           </li>
           <li>
-            <Link to='/login'>Please login</Link>
+            {!isAuthenticated && (
+              <Link
+                to={{
+                  pathname: '/login',
+                  state: {
+                    isAuthenticated: isAuthenticated,
+                    status: status,
+                    username: username
+                  }
+                }}
+              >
+                Please login
+              </Link>
+            )}
           </li>
         </ul>
       </div>

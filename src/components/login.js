@@ -13,6 +13,7 @@ const handleSubmit = (e, login, { formData }, setFormData) => {
 
 const Login = ({ isAuthenticated, isLoading, status, username, login }) => {
   const [formData, setFormData] = useState({ username: '', password: '' });
+  // console.log(isAuthenticated, isLoading, status, username);
   return (
     <div>
       {isLoading ? (
@@ -22,14 +23,22 @@ const Login = ({ isAuthenticated, isLoading, status, username, login }) => {
           <Redirect
             to={{
               pathname: '/list',
-              state: { status: 'admin', username: username }
+              state: {
+                status: 'admin',
+                username: username,
+                isAuthenticated: true
+              }
             }}
           />
         ) : (
           <Redirect
             to={{
-              pathname: `/list/${username}`,
-              state: { status: 'user', username: username }
+              pathname: `/${username}`,
+              state: {
+                status: 'user',
+                username: username,
+                isAuthenticated: true
+              }
             }}
           />
         )

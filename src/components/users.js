@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Userdetails from './userdetails';
+// import Userdetails from './userdetails';
 
 // const handleClick = (setDetail, user) => {
 //   setDetail(user.name);
@@ -51,14 +51,6 @@ const Users = props => {
           );
         })}
       </ul>
-
-      {/* <Route
-        path={`/:login`}
-        render={props => {
-          //   console.log(props.match);
-          return <Userdetails name={Detail} />;
-        }}
-      /> */}
     </div>
   );
 };
